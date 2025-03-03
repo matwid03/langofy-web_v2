@@ -1,0 +1,13 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*.js"
+    [headers.values]
+      Cache-Control = "no-store"
+[[headers]]
+  for = "/*.css"
+    [headers.values]
+      Cache-Control = "no-store"
