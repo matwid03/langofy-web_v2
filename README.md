@@ -1,6 +1,6 @@
 # **Langofy – Web Version**
 
-This is a **web version** of my original **mobile application** designed for children to learn English through interactive educational games. The project was originally built using **React Native** and later adapted with **React** for the web to provide learning experience on larger screens.
+This is a **web version** of my original **mobile application** - **https://github.com/matwid03/langofy-mobile** designed for children to learn English through interactive educational games. The project was originally built using **React Native** and later adapted with **React** for the web to provide learning experience on larger screens.
 
 ## **Features**
 
