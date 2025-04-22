@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useGlobalContext } from '../context/GlobalProvider';
+import { GlobalProvider } from '../context/GlobalProvider';
 
 const Navbar = () => {
-	const { isLoggedIn, logout } = useGlobalContext();
+	const { isLoggedIn, logout } = GlobalProvider.useGlobalContext();
 
 	return (
 		<nav className='bg-blue-600 p-4 text-white flex justify-between items-center fixed w-full top-0'>

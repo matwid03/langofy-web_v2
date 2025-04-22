@@ -4,11 +4,11 @@ import { FIREBASE_AUTH, FIRESTORE_DB } from '../FirebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
 import { FaHeart, FaHeartBroken } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { useGlobalContext } from '../context/GlobalProvider';
+import { GlobalProvider } from '../context/GlobalProvider';
 import { difficultyLevelString } from '../const/stringMap';
 
 const TestLevel = () => {
-	const { updateUserTestStatus, handleTestComplete } = useGlobalContext();
+	const { updateUserTestStatus, handleTestComplete } = GlobalProvider.useGlobalContext();
 	const [difficultyLevel, setDifficultyLevel] = useState('hard');
 	const [questionCount, setQuestionCount] = useState(1);
 	const [question, setQuestion] = useState(null);

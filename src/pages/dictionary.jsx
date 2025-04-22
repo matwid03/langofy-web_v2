@@ -25,11 +25,15 @@ const Dictionary = () => {
 	};
 
 	return (
-		<div className='bg-slate-200 flex flex-col min-h-screen overflow-hidden'>
-			<div className='flex flex-col items-center overflow-y-auto mt-20'>
-				<img className='w-96 h-96 mt-[-56px] mb-[-96px]' src={'/icons/book-icon.png'} />
+		<div className='bg-slate-200 flex flex-col h-screen'>
+			<div className='flex flex-col items-center mt-4 px-4 flex-1 overflow-hidden'>
+				<img className='w-96 h-96 mb-[-122px]' src='/icons/book-icon.png' />
+
 				<AddWordToDictionary addWord={addWordToDictionary} />
-				<DictionaryList />
+
+				<div className='w-full max-w-4xl flex-1 overflow-y-auto border-y-2 border-gray-800 my-2 px-6 pt-2'>
+					<DictionaryList />
+				</div>
 			</div>
 		</div>
 	);

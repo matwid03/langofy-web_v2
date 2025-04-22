@@ -10,10 +10,10 @@ import ImageWord from './levels/imageWord';
 import Sentences from './levels/sentences';
 import Translation from './levels/translation';
 import Navbar from './components/Navbar';
-import { useGlobalContext } from './context/GlobalProvider';
+import { GlobalProvider } from './context/GlobalProvider';
 
 const App = () => {
-	const { isLoading, isLoggedIn, hasTakenTest } = useGlobalContext();
+	const { isLoading, isLoggedIn, hasTakenTest } = GlobalProvider.useGlobalContext();
 	const location = useLocation();
 
 	if (isLoading) return <p>Ładowanie...</p>;

@@ -129,13 +129,13 @@ const Sentences = () => {
 
 	return (
 		<div className='bg-slate-200 min-h-screen flex flex-col items-center '>
-			<p className='text-xl mt-36'>Poziom: {difficultyLevelString[difficulty]}</p>
+			<p className='text-xl mt-24'>Poziom: {difficultyLevelString[difficulty]}</p>
 			<p className='ml-2 text-3xl text-blue-600'>Poprawne odpowiedzi: {points}</p>
 			{currentWord && (
 				<div className='mt-4 w-full flex flex-col items-center '>
 					<div className='mt-2 w-full flex flex-col items-center justify-center'>
 						<p className='text-gray-950 text-3xl mb-4 mx-2'>{currentWord.sentence}</p>
-						<div className='min-h-[80px] min-w-[640px] border-2 border-blue-600 rounded-xl bg-white w-80 p-4 mb-4 flex-wrap flex flex-row gap-4'>
+						<div className='min-h-[80px] md:w-[640px] border-2 border-blue-600 rounded-xl bg-white w-80 p-4 mb-4 flex-wrap flex flex-row gap-4'>
 							{selectedWords.map((word, index) => (
 								<button key={word.id || `${word.word}-${index}`} onClick={() => handleRemoveWord(index)}>
 									<p className='text-black text-3xl'>{word.word} </p>
@@ -151,12 +151,15 @@ const Sentences = () => {
 							</div>
 						)}
 					</div>
-					<div className='absolute bottom-4 left-0 right-0 flex flex-col items-center '>
-						<div className='bg-gray-700 w-11/12 h-4 rounded-full'>
-							<div className='bg-blue-600 h-4 rounded-full' style={{ width: `${((currentIndex + 1) / 10) * 100}%` }} />
+
+					{!showResult && (
+						<div className='absolute bottom-4 left-0 right-0 flex flex-col items-center '>
+							<div className='bg-gray-700 w-11/12 h-4 rounded-full'>
+								<div className='bg-blue-600 h-4 rounded-full' style={{ width: `${((currentIndex + 1) / 10) * 100}%` }} />
+							</div>
+							<p className='text-gray-950 text-2xl mt-2'>{`${currentIndex + 1} / 10`}</p>
 						</div>
-						<p className='text-gray-950 text-2xl mt-2'>{`${currentIndex + 1} / 10`}</p>
-					</div>
+					)}
 				</div>
 			)}
 		</div>

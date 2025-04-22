@@ -93,8 +93,8 @@ const Profile = () => {
 	};
 
 	return (
-		<div className='bg-slate-200 min-h-screen'>
-			<div className=' flex items-start gap-96 mt-16'>
+		<div className='bg-slate-200 min-h-screen flex flex-col '>
+			<div className=' flex items-start  md:gap-96 mt-16'>
 				<div className='ml-10 mt-12'>
 					<button onClick={toggleAvatarForm} className='mb-4'>
 						{avatar ? (

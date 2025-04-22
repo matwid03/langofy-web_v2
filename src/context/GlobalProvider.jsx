@@ -3,13 +3,9 @@ import { FIREBASE_AUTH, FIRESTORE_DB } from '../FirebaseConfig';
 import { collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const GlobalContext = createContext();
+const GlobalContext = createContext();
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const useGlobalContext = () => useContext(GlobalContext);
-
-const GlobalProvider = ({ children }) => {
+export const GlobalProvider = ({ children }) => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [user, setUser] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
@@ -107,4 +103,6 @@ const GlobalProvider = ({ children }) => {
 	);
 };
 
-export default GlobalProvider;
+GlobalProvider.useGlobalContext = function () {
+	return useContext(GlobalContext);
+};

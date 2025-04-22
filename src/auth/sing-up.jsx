@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { FIREBASE_AUTH, FIRESTORE_DB } from '../FirebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
-import { useGlobalContext } from '../context/GlobalProvider';
+import { GlobalProvider } from '../context/GlobalProvider';
 
 const SignUp = () => {
 	const [username, setUsername] = useState('');
@@ -15,7 +15,7 @@ const SignUp = () => {
 	const [errorMessage, setErrorMessage] = useState('');
 	const navigate = useNavigate();
 	const auth = FIREBASE_AUTH;
-	const { setIsRegistering } = useGlobalContext();
+	const { setIsRegistering } = GlobalProvider.useGlobalContext();
 
 	const submit = async () => {
 		setErrorMessage('');

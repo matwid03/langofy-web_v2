@@ -21,8 +21,8 @@ const AddWordToDictionary = ({ addWord }) => {
 	return (
 		<div className='w-full px-4 flex flex-col items-center justify-center'>
 			<FormField title='Wprowadź słowo (Ang)' value={word} isDictionary={true} handleChangeText={setWord} />
-			<FormField title='Wprowadź tłumaczenie (Pl)' value={translation} isDictionary={true} handleChangeText={setTranslation} otherStyles='mt-7' />
-			<CustomButton title='Dodaj słowo' handlePress={handleSubmit} containerStyles='mt-10 mb-4 w-full max-w-2xl' />
+			<FormField title='Wprowadź tłumaczenie (Pl)' value={translation} isDictionary={true} handleChangeText={setTranslation} otherStyles='mt-4' />
+			<CustomButton title='Dodaj słowo' handlePress={handleSubmit} containerStyles='mt-4 mb-4 w-full max-w-2xl' />
 		</div>
 	);
 };

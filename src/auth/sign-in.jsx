@@ -6,13 +6,13 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
 import CustomButton from '../components/CustomButton';
-import { useGlobalContext } from '../context/GlobalProvider';
+import { GlobalProvider } from '../context/GlobalProvider';
 
 const SignIn = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [errorMessage, setErrorMessage] = useState('');
-	const { setHasTakenTest, setUser } = useGlobalContext();
+	const { setHasTakenTest, setUser } = GlobalProvider.useGlobalContext();
 	const auth = FIREBASE_AUTH;
 	const navigate = useNavigate();
 

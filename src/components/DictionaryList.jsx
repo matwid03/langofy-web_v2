@@ -40,15 +40,16 @@ const DictionaryList = () => {
 	};
 
 	return (
-		<div className='my-10 px-6 border-y-2 border-gray-800 pt-6 w-full  max-w-4xl  overflow-y-auto '>
+		<div className='flex flex-col h-full'>
 			<div className='grid grid-cols-2 text-2xl font-bold pb-2 border-b border-gray-400'>
 				<p className='text-left'>Słowo:</p>
 				<p className='text-left'>Tłumaczenie:</p>
 			</div>
+
 			{dictionary.length === 0 ? (
-				<p className='text-2xl'>Brak słów w słowniku</p>
+				<p className='text-2xl mt-4'>Brak słów w słowniku</p>
 			) : (
-				<div className='overflow-y-auto max-h-[360px]'>
+				<div className='overflow-y-auto flex-1'>
 					{dictionary.map((item, index) => (
 						<div key={index} className='grid grid-cols-2 items-center px-2 py-2 border-b border-gray-300'>
 							<p className='text-3xl'>{item.word}</p>
